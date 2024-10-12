@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border:1px solid black; */
+}
+
+
+html {
+    padding: 0 ;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+ 
+    height: 100vh; /* 뷰포트 높이 100% */
+    padding: 0;
+    border: none;
+    background-color: #f4f4f4; /* 배경색 */
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+}
+
+.header .user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.title-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memo-content {
+    width: 300px;
+    height: 300px;
+}
+

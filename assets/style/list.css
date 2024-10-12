@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border:1px solid black; */
+}
+
+
+html {
+    padding: 0 ;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+ 
+    height: 100vh; /* 뷰포트 높이 100% */
+    padding: 0;
+    border: none;
+    background-color: #f4f4f4; /* 배경색 */
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+}
+
+.header .user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-memo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pages{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.memo-write{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border:1px solid black; */
+}
+
+html {
+    padding: 0 ;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+ 
+    height: 100vh; /* 뷰포트 높이 100% */
+    padding: 0;
+    border: none;
+    background-color: #f4f4f4; /* 배경색 */
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+}
+
+.header .user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.app-decription {
+    display: flex;
+}
+
+.app-description > h1 {
+    padding: 0;
+}
+
+.description-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip{
+    display:flex;
+    justify-content: flex-end;
+    width: 70%;
+}
+
+.notepad-img {
+    width: 250px;
+    height: auto;
+}
+
+.input-user-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-id{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:250px;
+}
+
+.user-pwd{
+    display:flex;   
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+}
+
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+
+}
+
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(100,100, 100, 0.6);
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-btn-ok{
+    border-radius: 10px;
+}

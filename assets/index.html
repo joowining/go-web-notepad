@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/index.css"/>
+    <title>Go-Notepad</title>
+</head>
+<body>
+    <div class="header"> 
+        <div class="app-name">
+            <h1>Go-Notepad</h1>
+        </div>
+        <div class="user-info">
+            Home 
+        </div>
+    </div>
+    <div class="content">
+        <div class= "content-body">
+            <div class="app-description"> 
+                 <div class="imgs">
+                     <img src="static/img/gohper.png" alt="gohper" />
+                     <img class="notepad-img" src="static/img/notepad.png" alt="notepad"/>
+                 </div>
+                 <div class="description-text">
+                    <h1 class="text-title">Web-Notepad by Go-Echo framework</h1>
+                    <div class="tip">
+                        <h3>Use with your ID</h3>
+                    </div>
+                 </div>
+
+            </div> 
+            <div class="input-user-data">
+                 <div class="user-id"> 
+                    <h3> ID: </h3>
+                    <input class="id-input" type="text" name="user-id"/>
+                 </div>
+                 <div class="user-pwd"> 
+                    <h3> PWD: </h3>
+                    <input class="pwd-input" type="text" name="user-pwd"/>
+                 </div>
+                 <div class="btns"> 
+                     <button class="singup-btn">Sign UP</button>
+                     <button class="login-btn">Login</button>
+                 </div>
+            </div>
+         </div>
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-message">
+                <h1>"Server Sent Message"</h1>
+            </div>
+            <div class="modal-btns">
+                <button class="modal-btn-ok">
+                    Ok
+                </button>
+            </div>
+        </div>
+    </div>
+<script>
+    // sample API call 
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch("http://localhost:8000/")
+            .then(response => {
+                if (!response.ok){
+                    throw new Error(`Http error ! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.error("error while fetching data:", err);
+            })
+    })
+
+    // check user data
+    const loginBtn = document.querySelector(".login-btn");
+
+    // loginBtn.addEventListener("click", () => {
+    //     let idInput = document.querySelector(".id-input");
+    //     let pwdInput = document.querySelector(".pwd-input");
+    //     console.log(idInput.value, pwdInput.value);
+    //     // fetch 의 default header ? 
+    //     fetch("http://localhost:8000/", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type":"application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             userId: idInput.value,
+    //             userPwd: pwdInput.value,
+    //         }),
+    //         })
+    //         .then((response) => response.json())
+    //         .then((result) => console.log(result));
+    // })
+
+
+    // open and close modal 
+    // loginBtn is declared before
+    const modal = document.querySelector(".modal");
+    const modalBtn = document.querySelector(".modal-btn-ok");
+    loginBtn.addEventListener("click", openModal);
+    modalBtn.addEventListener("click", closeModal);
+
+    function openModal(){
+        modal.setAttribute("style","display:flex");
+    }
+
+    function closeModal(){
+        modal.setAttribute("style","display:none");
+    }
+</script>
+</body>
+</html>
