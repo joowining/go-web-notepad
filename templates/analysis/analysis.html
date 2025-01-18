@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style/write.css"/>
-    <title>Note Writing</title>
+    <link rel="stylesheet" href="/static/style/analysis.css"/>
+    
+    <title>Analysis</title>
 </head>
 <body>
     <div class="header"> 
@@ -12,21 +13,24 @@
             <h1>Go-Notepad</h1>
         </div>
         <div class="user-info">
-            Home-list 
+            <a class="button">Home</a>
         </div>
     </div> 
     <div class="content">
         <div class="title-section">
             <h3>제목 : </h3>
-            <input class="memo-title" required type="text" placeholder="title"/>
+            <h3 class="memo-title"> {{.Title}}</h3>
+            <h3>종류 : </h3>
+            <h3 class="memo-title"> {{.Concept}}</h3>
+        </div>
+        <div class="tag-section">
         </div>
         <div class="text-section"> 
             <h3>본문</h3>
-            <textarea class="memo-content" required wrap="hard"></textarea>
+            <p class="memo-content"> {{.Content}} </p>
         </div>
         <div class="btn-section">  
-            <button class="save-btn"> 저장 </button>
-            <button class="cancle-btn"> 취소 </button>
+            <a href="/analysis/list" class="button"> 돌아가기 </a>
         </div>
     </div>
 </body>

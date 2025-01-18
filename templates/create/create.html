@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style/create.css"/>
+    <title>Creating User</title>
+</head>
+<body>
+    <div class="header"> 
+        <div class="app-name">
+            <h1>Go-Notepad</h1>
+        </div>
+        <div class="user-info">
+            <a href="/" class="button">Home</a>
+        </div>
+    </div> 
+    <div class="content">
+        {{ if eq .DupCheck false }}
+            <form action="/create/check" method="POST">
+                <div class="id-section">
+                    <p > ID : </p>
+                    <div class="id-input">
+                        <input id="user-id" name="id" type="text" placeholder="input your id"/>
+                        <button>중복확인 </button>
+                    </div>
+                </div>
+            </form>
+        {{ else }}
+        <form action="/create" method="POST"> 
+            <div class="id-section">
+                <p > ID : </p>
+                <div class="id-input">
+                    <input type="text" {{ if .IdCheck }} value="{{.Id}}" readonly {{ end }} id="user-id" name="id" type="text" placeholder="input your id"/>
+                </div>
+            </div>
+            <div class="pwd-section">
+                <div class="pwd-input">
+                    <p> Password : </p>
+                    <input id="first-pwd" name="password" type="password" placeholder="passwrod"/>
+                </div>
+                <div class="pwd-re-input">
+                    <p> ReType PWD :</p>
+                    <div style="padding:0;">
+                        <button id="pwd-check" type="button">일치 체크</button>
+                        <input id="second-pwd" type="password" placeholder="password re-input"/> 
+                    </div>
+                </div>
+            </div>
+            <div class="name-section">
+                <p> Name : </p>
+                <input name="user-name" id="user-name" type="text" placeholder="name"/>
+            </div>
+            <div class="email-section">
+                <p> e-mail :</p>
+                <input name="email" id="user-email" type="email" placeholder="email"/>
+            </div>
+            <div class="btn-section">
+                <button {{ if eq .Disabled false }}disabled{{ end }}  class="sign-up-btn"> sign up </button>
+                <a href="/" class="button">cancel </a> 
+            </div> 
+        </form>
+       {{ end }} 
+    </div>
+
+    <script src="/static/js/create.js">
+
+    </script>
+</body>
+</html>

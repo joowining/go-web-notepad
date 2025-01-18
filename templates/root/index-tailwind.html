@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Go-Notepad</title>
+</head>
+<body class="h-screen">
+    <div class="flex justify-between"> 
+        <div class="p-2 m-2">
+            <h1 class="text-3xl font-bold font-serif">Go-Notepad</h1>
+        </div>
+        <div class="p-2 m-2">
+            Home 
+        </div>
+    </div>
+    <div class="h-full">
+        <div class="flex flex-col items-center justify-center h-2/3 space-y-10 head">
+            <div class="w-1/2 space-y-10"> 
+                 <div class="flex justify-evenly">
+                     <img class="w-64 h-64"src="/static/img/gohper.png" alt="gohper" />
+                     <img class="w-64 h-64" src="/static/img/notepad.png" alt="notepad"/>
+                 </div>
+                 <div class="flex flex-col justify-self-center justify-items-center mb-5" >
+                    <h1 class="text-3xl font-bold font-serif">Web-Notepad by Go-Echo</h1>
+                 </div>
+            </div> 
+            <form  action="/" method="post">
+                 <div class="flex pb-2"> 
+                    <input class="ml-2 p-1 border-black border-2 rounded-lg" type="text" name="user-id" placeholder="ID"/>
+                 </div>
+                 <div class="flex pb-4"> 
+                    <input class="ml-2 p-1 border-black border-2 rounded-lg" type="text" name="user-pwd" placeholder="Password"/>
+                 </div>
+                 <div class="flex justify-between "> 
+                    <a  class="text-white bg-blue-500 rounded-md p-2 inline-block"href="/create"> sign up</a> 
+                    <button  class="text-white bg-blue-500 rounded-md inline-block p-2">Login</button>
+                 </div>
+            </form>
+         </div>
+    </div>
+
+<script src="/static/js/index.js">
+</script>
+</body>
+</html>

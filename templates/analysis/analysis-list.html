@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/analysis-list.css"/>
+    <title>Analysis List</title>
+</head>
+<body>
+   <div class="header">
+        <div class="app-name">
+            <h1>Go-Notepad</h1>
+        </div>
+        <div class="user-info">
+            you are now {{.User}}
+        </div>
+        <a href="/memo/list" class="button">Back</a>
+   </div> 
+   <div class="content">
+        <div class="content-block">
+            <div class="block-time">
+                <div>
+                    <form action="/analysis/chat" method="POST">
+                        분석 종류 : 
+                        <select name="concepts">
+                            <option value="1">나를 알아가기</option>
+                            <option value="2">활동 제안하기</option>
+                            <option value="3">콘텐츠 추천받기</option>
+                        </select>
+                        분석 갯수 : 
+                        <select name="numbers">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select> 
+                        (최신기준)
+                        <button class="button">AI 분석하기</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                {{range $_, $analysis := .Analysises}}
+                    <div class="analysis-line">
+                        <div class="analysis-title">
+                            {{ $analysis.Concept}} : {{ $analysis.Title }}
+                        </div>
+                        <div class="analysis-buttons">
+                            <a class="button" href="/analysis/{{$analysis.Id}}">열기</a>
+                            <a class="button" href="/analysis/delete/{{$analysis.Id}}">삭제</a>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="pages">
+            {{if .LeftBtn}}
+                <a class="button" href="/analysis/list/{{ .LeftVal}}"> 이전</a>
+            {{ end }}
+            {{range $i := .Pages}}
+                {{ if eq $i $.StartInt}}
+                <a class="current-button" href="#">{{$i}}</a>
+                {{ else }}
+                <a class="button" href="/analysis/list/{{$i}}">{{$i}}</a>
+                {{end}}
+            {{end}} 
+            {{if .RightBtn}}
+                <a class="button" href="/analysis/list/{{ .RightVal}}"> 다음 </a>
+            {{ end }}
+        </div>
+   </div>
+</body>
+</html>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style/memo.css"/>
-    <title>Note</title>
+    <link rel="stylesheet" href="/static/style/memo.css"/>
+    
+    <title>Memo</title>
 </head>
 <body>
     <div class="header"> 
@@ -12,21 +13,23 @@
             <h1>Go-Notepad</h1>
         </div>
         <div class="user-info">
-            Home-list 
+            <a class="button">Home</a>
         </div>
     </div> 
     <div class="content">
         <div class="title-section">
             <h3>제목 : </h3>
-            <h3 class="memo-title"> 임시 제목</h3>
+            <h3 class="memo-title"> {{.Title}}</h3>
+        </div>
+        <div class="tag-section">
         </div>
         <div class="text-section"> 
             <h3>본문</h3>
-            <p class="memo-content"> 임시 메모 </p>
+            <p class="memo-content"> {{.Content}} </p>
         </div>
         <div class="btn-section">  
-            <button class="edit-btn"> 수정 </button>
-            <button class="cancel-btn"> 취소 </button>
+            <a href="/memo/edit/{{$.Id}}" class="button"> 수정하기 </a>
+            <a href="/memo/list" class="button"> 돌아가기 </a>
         </div>
     </div>
 </body>

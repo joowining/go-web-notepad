@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/list.css"/>
+    
+    <title>Memo List</title>
+</head>
+<body>
+    <div class="header"> 
+        <div class="app-name">
+            <h1>Go-Notepad</h1>
+        </div>
+        <div class="user-info">
+           <h1 class="user-name"> </h1>
+           <a href="/logout" class="button">logout</a>
+        </div>
+    </div> 
+    <div class="content">
+        <div class="content-block">
+            <div class="block-time">
+                <!-- form태그를 GET으로 활용해도 괜찮은지 질문-->
+                <div>
+                    <form action="/memo/list" method="GET" >
+                        <input type="text" name="search" placeholder="memo-title">
+                        <button>검색</button>
+                    </form>
+                    <a class="button" href="/analysis/list">AI 분석</a>
+                </div>
+                <div>
+                    
+                    <button class="button deleteOptionBtn">일괄 삭제</button>
+                    <button class="button createEl">생성 </button> 
+                </div>
+            </div>
+          
+            <div class="block-memo-list">
+               
+            </div>
+            
+            <div class="delete-part">
+                <button class="button">삭제하기</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="pages">
+       
+            <a class="button" href="/memo/list/{{ .LeftVal}}"> 이전</a>
+       
+      
+            
+            <a class="current-button" href="#">{{$i}}</a>
+            <a class="button" href="/memo/list/{{$i}}">{{$i}}</a>
+        
+            <a class="button" href="/memo/list/{{ .RightVal}}"> 다음 </a>
+   
+    </div>
+    <div class="memo-write">
+      <a href="/memo/write" class="button">메모 작성하기 </a>
+    </div>
+    <script src="/static/js/util/domMan.js"></script>
+    <script src="/static/js/memo/list.js"></script>
+</body>
+</html>

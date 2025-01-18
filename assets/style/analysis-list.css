@@ -20,6 +20,10 @@ body {
     background-color: #f4f4f4; /* 배경색 */
 }
 
+button{
+    border-color: white;
+}
+
 .header {
     display:flex;
     justify-content: space-between;
@@ -31,31 +35,19 @@ body {
     align-items: center;
 }
 
-.content {
+.list-memo-item{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.title-section {
-    display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
-.text-section {
+.pages{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    gap: 10px;
     align-items: center;
 }
 
-.memo-content {
-    width: 300px;
-    height: 300px;
-}
 
 .button {
     display: inline-block;
@@ -70,4 +62,31 @@ body {
 
 .button:hover {
     background-color: #0056b3;
+}
+
+
+.current-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.block-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.analysis-line{
+    display: flex;
+    justify-content: space-between;
+}
+
+.analysis-buttons{
+    display:flex;
+    gap: 5px;
 }

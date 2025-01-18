@@ -39,60 +39,23 @@ body {
     height: 100vh;
 }
 
-.id-section {
-    display: flex;
+.title-section {
+    display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 30%;
 }
 
-.id-input{
-    padding:0;
-}
-
-.pwd-section {
+.text-section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 30%;
-    gap: 4px;
 }
 
-.pwd-input{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width:100%;
-    padding: 0;
-}
-
-.pwd-re-input{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-}
-
-.name-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
-}
-
-.email-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
-}
-
-.btn-section {
-    display: flex;
-    justify-content: flex-end;
-    width: 30%;
+.memo-content {
+    width: 300px;
+    height: 300px;
 }
 
 .button {

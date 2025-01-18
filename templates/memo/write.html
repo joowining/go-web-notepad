@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/write.css"/>
+    <title>Memo Writing</title>
+</head>
+<body>
+    <div class="header"> 
+        <div class="app-name">
+            <h1>Go-Notepad</h1>
+        </div>
+        <div class="user-info">
+            <a class="button">Home</a>
+        </div>
+    </div> 
+    <form class="content" action="/memo/write" method="POST">
+        <div class="title-section">
+            <h2>제목 : </h2>
+            <input class="memo-title" required type="text" placeholder="title" name="title"/>
+        </div>
+        <div class="title-section">
+            <div>
+                tags : 
+            </div>
+            <h3>태그 추가 : </h3>
+            <input type="text"  placeholder="서로다른 tag를 , 를 붙여서 작성하세요 " name="tag"/>
+        </div>
+        <div class="text-section"> 
+            <h3>본문</h3>
+            <textarea class="memo-content" required wrap="hard" name="content"></textarea>
+        </div>
+        <div class="btn-section">  
+            <button class="save-btn"> 저장하기 </button>
+            <a class="button" href="/memo/list"> 돌아가기</a>
+        </div>
+    </form>
+</body>
+</html>

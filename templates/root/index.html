@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/index.css"/>
+    <title>Go-Notepad</title>
+</head>
+<body>
+    <div class="header"> 
+        <div class="app-name">
+            <h1>Go-Notepad</h1>
+        </div>
+        <div class="user-info">
+            Home 
+        </div>
+    </div>
+    <div class="content">
+        <div class= "content-body">
+            <div class="app-description"> 
+                 <div class="imgs">
+                     <img src="static/img/gohper.png" alt="gohper" />
+                     <img class="notepad-img" src="static/img/notepad.png" alt="notepad"/>
+                 </div>
+                 <div class="description-text">
+                    <h1 class="text-title">Web-Notepad by Go-Echo framework</h1>
+                    <div class="tip">
+                        <h3>Use with your ID</h3>
+                    </div>
+                 </div>
+
+            </div> 
+            <form class="input-user-data" action="/" method="post">
+                 <div class="user-id"> 
+                    <h3> ID: </h3>
+                    <input class="id-input" type="text" name="user-id"/>
+                 </div>
+                 <div class="user-pwd"> 
+                    <h3> PWD: </h3>
+                    <input class="pwd-input" type="text" name="user-pwd"/>
+                 </div>
+                 <div class="btns"> 
+                    <a class="button" href="/create"> sign up</a> 
+                    <button  class="login-btn">Login</button>
+                 </div>
+            </form>
+         </div>
+    </div>
+
+<script src="/static/js/index.js">
+</script>
+</body>
+</html>
